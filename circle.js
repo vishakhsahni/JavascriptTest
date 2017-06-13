@@ -1,72 +1,116 @@
-document.write("<!DOCTYPE html>");
-document.write("<html>");
-document.write("  <head>");
-document.write("    <meta http-equiv=\"Content-Type\" content=\"text\/html; charset=utf-8\">");
-document.write("    <meta name=\"viewport\" content=\"initial-scale=1, maximum-scale=1, user-scalable=no\">");
-document.write("    <title>Create circles<\/title>");
-document.write("   <link rel=\"stylesheet\" href=\"https:\/\/js.arcgis.com\/3.19\/esri\/css\/esri.css\">");
-document.write("    <style>");
-document.write("      html, body, #map {");
-document.write("        height: 100%; width: 100%; margin: 0; padding: 0; ");
-document.write("      }");
-document.write("      #controls {");
-document.write("        background: #fff;");
-document.write("        box-shadow: 0 6px 6px -6px #999;");
-document.write("        color: #444;");
-document.write("        font-family: sans-serif;");
-document.write("        height: auto;");
-document.write("        left: 1em;");
-document.write("        padding: 1em;");
-document.write("        position: absolute;");
-document.write("        top: 1em;");
-document.write("        width: auto;");
-document.write("        z-index: 40;");
-document.write("      }");
-document.write("      #controls div {");
-document.write("        padding: 0 0 1em 0;");
-document.write("      }");
-document.write("    <\/style>");
-document.write("  <\/head>");
-document.write("  <body>");
-document.write("    <form name=\"userInput\">");
-document.write("        Latitude:<input type=text id=\"lat\" value =\" 38.5\" \/><br><br> ");
-document.write("        Longitude:  <input type=text id=\"longi\" value =\" -77.5\" \/><br><br>");
-document.write("        Radius: <input type=number  id=\"rad\" value = \"500\"> <br><br> ");
-document.write("        <input type=\"button\" id=\"submit\" value=\"Submit\" onclick=\"test();\"\/> <br>  ");
-document.write("    <\/form>");
-document.write("    <div id=\"map1\"><\/div>");
-document.write("    <script src=\"https:\/\/js.arcgis.com\/3.19\/\"><\/script>");
-document.write("    <script>");
-document.write("        function test(){");
-document.write("           ");
-document.write("         require([");
-document.write("                \"esri\/map\", \"esri\/geometry\/Circle\",\"esri\/symbols\/SimpleFillSymbol\", ");
-document.write("                \"esri\/graphic\", \"esri\/layers\/GraphicsLayer\",\"esri\/symbols\/SimpleMarkerSymbol\",");
-document.write("                \"dojo\/dom\", \"dojo\/dom-attr\", \"dojo\/domReady!\"       ");
-document.write("              ], ");
-document.write("              function( Map, Circle, SimpleFillSymbol, Graphic, GraphicsLayer)");
-document.write("              {     ");
-document.write("\/\/                  var point = new Point(");
-document.write("\/\/                          {");
-document.write("\/\/                      setLatitude:,\"esri\/geometry\/Point\"");
-document.write("\/\/                      setLongitude:Point,");
-document.write("\/\/                          });");
-document.write("                  var irad=document.forms[\"userInput\"][\"rad\"].value;");
-document.write("                  var map = new Map(\"map1\", {basemap: \"streets\", center: [document.forms[\"userInput\"][\"longi\"].value,document.forms[\"userInput\"][\"lat\"].value], slider: true, zoom: 15});");
-document.write("                  var symbol = new SimpleFillSymbol().setColor(null).outline.setColor(\"blue\");");
-document.write("                  var gl = new GraphicsLayer({ id: \"createcircle\" });  ");
-document.write("                ");
-document.write("                  var circle = new Circle(");
-document.write("                          {center : [document.forms[\"userInput\"][\"longi\"].value,document.forms[\"userInput\"][\"lat\"].value], ");
-document.write("                           radius: irad,");
-document.write("                       geodesic:true}); ");
-document.write("                ");
-document.write("                  var graphic = new Graphic(circle, symbol);                 ");
-document.write("                  map.addLayer(gl);");
-document.write("                  map.on(\"load\",gl.add(graphic));");
-document.write("                  ");
-document.write("              });");
-document.write("        };");
-document.write("    <\/script>        ");
-document.write("  <\/body>");
-document.write("<\/html>");
+<script language='JavaScript' type='text/javascript'>
+<!--
+ document.write('<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Co'
+ +'ntent-Type" content="text/html; charset=utf-8">
+    <meta name="viewpo'
+ +'rt" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    '
+ +'<title>Create circles</title>
+   <link rel="stylesheet" href="https://'
+ +'js.arcgis.com/3.19/esri/css/esri.css">
+    <style>
+      html, body, #'
+ +'map {
+        height: 100%; width: 100%; margin: 0; padding: 0; 
+     '
+ +' }
+      #controls {
+        background: #fff;
+        box-shadow: 0 6'
+ +'px 6px -6px #999;
+        color: #444;
+        font-family: sans-serif'
+ +';
+        height: auto;
+        left: 1em;
+        padding: 1em;
+     '
+ +'   position: absolute;
+        top: 1em;
+        width: auto;
+        '
+ +'z-index: 40;
+      }
+      #controls div {
+        padding: 0 0 1em 0;'
+ +'
+      }
+    </style>
+  </head>
+  <body>
+    <form name="userInput">
+ '
+ +'       Latitude:<input type=text id="lat" value =" 38.5" /><br><br> 
+ '
+ +'       Longitude:  <input type=text id="longi" value =" -77.5" /><br><'
+ +'br>
+        Radius: <input type=number  id="rad" value = "500"> <br><b'
+ +'r> 
+        <input type="button" id="submit" value="Submit" onclick="t'
+ +'est();"/> <br>  
+    </form>
+    <div id="map1"></div>
+    <script src'
+ +'="https://js.arcgis.com/3.19/"></script>
+    <script>
+        function'
+ +' test(){
+           
+         require([
+                "esri/map", "e'
+ +'sri/geometry/Circle","esri/symbols/SimpleFillSymbol", 
+               '
+ +' "esri/graphic", "esri/layers/GraphicsLayer","esri/symbols/SimpleMarke'
+ +'rSymbol",
+                "dojo/dom", "dojo/dom-attr", "dojo/domReady!'
+ +'"       
+              ], 
+              function( Map, Circle, Simple'
+ +'FillSymbol, Graphic, GraphicsLayer)
+              {     
+//           '
+ +'       var point = new Point(
+//                          {
+//        '
+ +'              setLatitude:,"esri/geometry/Point"
+//                   '
+ +'   setLongitude:Point,
+//                          });
+               '
+ +'   var irad=document.forms["userInput"]["rad"].value;
+                '
+ +'  var map = new Map("map1", {basemap: "streets", center: [document.for'
+ +'ms["userInput"]["longi"].value,document.forms["userInput"]["lat"].valu'
+ +'e], slider: true, zoom: 15});
+                  var symbol = new Simpl'
+ +'eFillSymbol().setColor(null).outline.setColor("blue");
+               '
+ +'   var gl = new GraphicsLayer({ id: "createcircle" });  
+             '
+ +'   
+                  var circle = new Circle(
+                       '
+ +'   {center : [document.forms["userInput"]["longi"].value,document.form'
+ +'s["userInput"]["lat"].value], 
+                           radius: irad'
+ +',
+                       geodesic:true}); 
+                
+          '
+ +'        var graphic = new Graphic(circle, symbol);                 
+  '
+ +'                map.addLayer(gl);
+                  map.on("load",gl.a'
+ +'dd(graphic));
+                  
+              });
+        };
+    </sc'
+ +'ript>        
+  </body>
+</html>');
+-->
+</script>
