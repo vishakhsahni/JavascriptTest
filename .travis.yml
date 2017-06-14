@@ -1,9 +1,5 @@
-language: node_js
-node_js:
-        - "6"
-        - "6.1"
-        - "5.11"
-        - "5.1"
-        - "0.6"
-
-
+language: objective-c #!
+osx_image: xcode6.4 #2
+xcode_project: MovingHelper.xcodeproj #3
+xcode_scheme: MovingHelper #4
+xcode_sdk: iphonesimulator 8.4 #5
